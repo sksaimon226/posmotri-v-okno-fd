@@ -235,7 +235,6 @@ color: #545050;
   padding: 1px;
 }
 
-/* РАЗОБРАТЬСЯ С ЧЕКБОКСОМ */
 .search-form__pseudo-checkbox::after {
   content: "";
   display: block;
@@ -245,7 +244,7 @@ color: #545050;
   opacity: 0;
 }
 
-.search-form__checkbox:checked::after {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after  {
   opacity: 1;
 }
 
