@@ -53,6 +53,16 @@ ol {
   background-color: #D9D9D9;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .content {
   display: flex;
   flex-direction: row;
@@ -83,7 +93,7 @@ ol {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  gap: 30px;
+  gap: 26px;
 }
 
 .search-form {
@@ -125,7 +135,7 @@ gap: 30px;
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
-  font-style: normal;
+  font-family: "Fira Sans Condensed";
 }
 
 .title {
@@ -164,5 +174,114 @@ color: #545050;
   -webkit-line-clamp: 4;        
   -webkit-box-orient: vertical; 
   overflow: hidden; 
-  
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  gap: 5px ;
+}
+
+.search-form__textfield {
+  width: 225px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Fira Sans Condensed";
+  color: #fff;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 1px 0 1px 0;
+  background-color: transparent;
+  appearance: none;
+}
+
+/* Подобрать настройки шрифта для плейсхолдера */
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__label:focus {
+  outline: none;
+}
+
+.search-form__checkbox-list .search-form__label:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid rgb(255, 255, 255);
+  outline-offset: 2px;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  padding: 1px;
+}
+
+/* РАЗОБРАТЬСЯ С ЧЕКБОКСОМ */
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.search-form__checkbox:checked::after {
+  opacity: 1;
+}
+
+.button {
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
+}
+
+/* НАСТРОИТЬ ВЫСОТУ КНОПКИ */
+.more-button {
+height: 34px;
+}
+
+.button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #545050 ;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid rgb(255, 255, 255);
+  outline-offset: 2px;
 }
