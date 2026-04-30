@@ -163,12 +163,13 @@ ol {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 196px;
-  line-height: 1.3;
+  line-height: 100%; /*согласно макету из figma */
+  margin: 4px 0;  /* межстрочный интервал между абзацем и параграфом задал через margin */
 }
 
 .content__video-card-description {
   font-size: 18px;
-  line-height: 16.2px;
+  line-height: 16.2px; /*согласно макету из figma */
   font-weight: 400;
   display: -webkit-box;
   -webkit-line-clamp: 4;
